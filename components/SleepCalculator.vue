@@ -1,5 +1,8 @@
 <template>
-  <div class="sleep-calculator mx-auto max-w-xs">
+  
+    <div class="bg-scroll" style="background: #424345">
+    
+  <div class="sleep-calculator mx-auto max-w-xs text-white">
     <calculator-setup
       v-if="config.setup"
       v-on:setup-completed="calculate" />
@@ -7,6 +10,7 @@
       v-else
       v-on:reset="reset"
       v-bind:config="config" />
+  </div>
   </div>
 </template>
 

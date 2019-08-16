@@ -3,12 +3,8 @@
     <h2 class="font-bold py-2">
       WAKE UP TIMES
     </h2>
-    <div class="info">
-      <p>It takes the average human about 15 minutes to fall asleep. <br>
-        If you go to sleep right now, you should try to wake up at one of the following times:</p>
-    </div>
     <div class="flex flex-wrap justify-center py-5">
-      <div v-for="time in results" class="border border-solid border-blue-500 rounded mx-1 my-2 px-1">
+      <div v-for="time in results" class="text-black bg-white border border-solid border-blue-500 rounded mx-1 my-2 px-1">
         {{ time | moment("HH:mm") }}
       </div>
     </div>
@@ -32,6 +28,7 @@ export default {
       }
 
       return times
+
     }
   }
 }

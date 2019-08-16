@@ -1,7 +1,10 @@
 <template>
   <div class="calculator-setup">
-    <h2 class="calc-title py-2">
-      IF I WANT TO WAKE UP AT...
+    <p class="">Sleep Calculator</p>
+      <br>
+<!-- SWITCH FOR 'WHEN SHOULD I GO TO BED' VIEW -->
+    <h2 class="calc-title py-2 ">
+      If I want to wake up at...
     </h2>
     <div class="setup-controls flex">
       <time-control class="w-1/2"
@@ -14,18 +17,22 @@
         v-on:set-value="setMinute" />
     </div>
     <div class="calc-actions py-2">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4" @click="finish('go-to-bed')">
-        WHEN SHOULD I GO TO BED?
+      <button class="mv-btn--secondary bg-white text-blue border-solid border py-2 px-4 rounded-full hover:bg-blue-100 text-blue-500 font-bold py-2 px-4" @click="finish('wake-up')">
+        When should I go to bed?
       </button>
     </div>
-    <h2 class="calc-title py-2">
-      IF I GO TO SLEEP NOW...
+
+
+<!-- SWITCH FOR 'WHEN SHOULD I GET UP' VIEW -->
+    <!-- <h2 class="calc-title py-2">
+      If I go to sleep now...
     </h2>
     <div class="calc-actions py-2">
-      <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4" @click="finish('wake-up')">
-        WHEN SHOULD I GET UP?
+      <button class="bg-white text-blue border-solid border py-2 px-4 rounded-full hover:bg-blue-100 text-blue-500 font-bold py-2 px-4" @click="finish('wake-up')">
+        When should I get up?
       </button>
-    </div>
+    </div> -->
+
   </div>
 </template>
 

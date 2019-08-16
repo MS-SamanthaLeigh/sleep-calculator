@@ -2,7 +2,7 @@
   <div class="time-control">
     <div class="time-item"
       v-for="item in items" :key="item"
-      v-bind:class="{ 'bg-blue-500 text-white': (item == selected) }"
+      v-bind:class="{ 'bg-white-500 text-white rounded': (item == selected) }"
     >
       <button class="w-full" @click="setValue(item)">
         {{ item }}

@@ -1,0 +1,139 @@
+/* ----- Typography ----- */
+$mv-font-brand-bold: 'Gilroy-Bold', Arial;
+$mv-font-brand-medium: Gilroy-Medium, Arial;
+$mv-font-brand-semibold: Gilroy-Semibold, Arial;
+$mv-font-brand-regular: Gilroy-Regular, Arial;
+$mv-font-body-old:'Open Sans', sans-serif;
+$mv-font-body:'Noto Sans', sans-serif;
+$mv-base-text-color: #333333;
+$mv-lighter-text-color: #666666;
+
+@function mv-type-get-letter-spacing_($tracking, $font-size) {
+  @return $tracking / ($font-size * 16) * 1em;
+}
+
+/* ----- Colors ----- */
+$mv-brand-color-light: #FB00FF;
+$mv-brand-color-medium: #9400FF;
+$mv-brand-color-dark: #003FFF;
+
+$mv-brand-color-light-hover: #EE6FFF;
+$mv-brand-color-medium-hover: #A458FF;
+$mv-brand-color-dark-hover: #4E6DFF;
+
+@mixin mv-brand-gradient-diagonal {
+  background: $mv-brand-color-medium;
+  background: -moz-linear-gradient(120deg, $mv-brand-color-light 0%, $mv-brand-color-dark 100%);
+  background: -webkit-linear-gradient(120deg, $mv-brand-color-light 0%, $mv-brand-color-dark 100%);
+  background: linear-gradient(120deg, $mv-brand-color-light 0%, $mv-brand-color-dark 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$mv-brand-color-light",endColorstr="$mv-brand-color-dark",GradientType=1);
+}
+
+@mixin mv-brand-gradient-diagonal-hover {
+  background: rgb(249,66,255);
+  background: -moz-linear-gradient(120deg, $mv-brand-color-light-hover 0%, $mv-brand-color-dark-hover 100%);
+  background: -webkit-linear-gradient(120deg, $mv-brand-color-light-hover 0%, $mv-brand-color-dark-hover 100%);
+  background: linear-gradient(120deg, $mv-brand-color-light-hover 0%, $mv-brand-color-dark-hover 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$mv-brand-color-light-hover",endColorstr="$mv-brand-color-dark-hover",GradientType=1);
+}
+
+@mixin mv-brand-gradient-horizontal {
+  background: $mv-brand-color-medium;
+  background: -moz-linear-gradient(180deg, $mv-brand-color-light 0%, $mv-brand-color-dark 100%);
+  background: -webkit-linear-gradient(180deg, $mv-brand-color-light 0%, $mv-brand-color-dark 100%);
+  background: linear-gradient(180deg, $mv-brand-color-light 0%, $mv-brand-color-dark 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$mv-brand-color-light",endColorstr="$mv-brand-color-dark",GradientType=1);
+}
+
+@mixin mv-brand-gradient-horizontal-hover {
+  background: rgb(249,66,255);
+  background: -moz-linear-gradient(180deg, $mv-brand-color-light-hover 0%, $mv-brand-color-dark-hover 100%);
+  background: -webkit-linear-gradient(180deg, $mv-brand-color-light-hover 0%, $mv-brand-color-dark-hover 100%);
+  background: linear-gradient(180deg, $mv-brand-color-light-hover 0%, $mv-brand-color-dark-hover 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$mv-brand-color-light-hover",endColorstr="$mv-brand-color-dark-hover",GradientType=1);
+}
+
+$mv-accent-color-green:#03A532;
+$mv-accent-color-green-light:#13C346;
+
+$mv-accent-color-yellow:#FFCE2A;
+$mv-accent-color-yellow-light:#FFDB62;
+
+$mv-accent-color-orange:#FF9915;
+$mv-accent-color-orange-light:#FFAC41;
+
+$mv-accent-color-red:#DE1736;
+$mv-accent-color-red-light:#DE3953;
+
+$mv-accent-color-blue:#2A8CFE;
+$mv-accent-color-blue-light:#78BCFF;
+$mv-accent-color-blue-dark:#0047AF;
+
+$mv-function-color-black: #000000;
+$mv-function-color-white: #FFFFFF;
+
+$mv-function-color-darkest:#212B36;
+$mv-function-color-darker:#454F5B;
+$mv-function-color-dark:#637381;
+$mv-function-color-medium-dark:#919EAB;
+$mv-function-color-medium-light:#C4CDD5;
+$mv-function-color-light:#DFE3E8;
+$mv-function-color-lighter:#F4F6F8;
+$mv-function-color-lightest:#F9FAFB;
+
+
+/* ----- Button ----- */
+@mixin mv-button {
+  padding:1rem 2rem;
+  min-height:60px;
+  min-width:250px;
+  width:max-content;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+@mixin mv-button-small {
+  &.--small {
+   @extend .mv-type--button-small;
+   padding: .7rem 2rem;
+   min-height: 42px;
+   min-width: 180px; 
+ }
+}
+
+/* ----- List ----- */
+@mixin mv-list-reset {
+  position: relative;
+    list-style: none;
+    padding-left:0;
+}
+
+/* ----- Break Points ----- */
+$screen-xs-min: 576px;
+$screen-xxs-max: ($screen-xs-min - 1);
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
+$screen-xl-min: 1600px;
+$screen-lg-max: ($screen-xl-min - 1);
+
+@mixin for-size($size) {
+  @if $size == phone-up {
+    @media (min-width: 576px) { @content; }
+    } @else if $size == tablet-portrait-up {
+      @media (min-width: 768px) { @content; }
+      } @else if $size == tablet-landscape-up {
+        @media (min-width: 992px) { @content; }
+        } @else if $size == desktop-up {
+          @media (min-width: 1200px) { @content; }
+          } @else if $size == big-desktop-up {
+            @media (min-width: 1600px) { @content; }
+          }
+        }
